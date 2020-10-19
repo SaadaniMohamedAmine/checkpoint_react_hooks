@@ -5,7 +5,7 @@ const MovieCard = ({movie}) => {
     
     return (
         <div  className="movie">
-            <img src={movie.image} alt='' width="200px"/>
+            <img src={movie.image} alt='' width="150px"/>
     <h4>{movie.name}</h4>
     <StarRatingComponent 
           name="rate" 
