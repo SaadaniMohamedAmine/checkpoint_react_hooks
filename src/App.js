@@ -1,6 +1,8 @@
-import React from 'react';
+import React,{useState}  from 'react';
 import './App.css';
 import MoviesList from './MoviesList';
+import Rating  from './Rating' 
+import  Search from './Search ' 
 
 function App() {
   
@@ -24,6 +26,20 @@ function App() {
       year:2020,
     }
   ];
+  const [movies,setMovies]=useState(moviesList) ;
+  const addMovie=(newMovie)=>{
+    setMovies([...moviesList,newMovie])
+  }
+  const [search,setSearch]=useState("");
+  const [rating,setRating]=useState(1);
+  const searchFunc=(value)=>{
+    setSearch(value);
+    setMovies(movies);
+
+  }
+  const ratingFunc=(rate)=>{
+    setRating(rate);
+  }
   return (
     <div className="App">
       <header className="App-header">
