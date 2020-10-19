@@ -1,10 +1,13 @@
-import React,{useState}  from 'react';
+import React,{useState} from 'react';
 import './App.css';
-import MoviesList from './MoviesList';
+import MoviesList from './MoviesList'
+import AddMovie from './AddMovie'
+import  Search from './Search' 
 import Rating  from './Rating' 
-import  Search from './Search ' 
 
-function App() {
+
+
+function App () {
   
   const moviesList=[
     {
@@ -42,15 +45,17 @@ function App() {
   }
   return (
     <div className="App">
-      <header className="App-header">
-      <MoviesList movies={movies.filter(movie=>
+      <div className='App-header '>
+        <Search search={searchFunc}/>
+        <Rating ratingFunc={ratingFunc} rating={rating}/>
+         <MoviesList movies={movies.filter(movie=>
           movie.name
           .toLocaleLowerCase()
           .includes(search.trim().toLocaleLowerCase()) && movie.rating>=rating
           ) }/>
-      </header>
+         <AddMovie addMovie={addMovie}/>
+      </div>
     </div>
-  );
+  )
 }
-
-export default App;
+export default App ;
