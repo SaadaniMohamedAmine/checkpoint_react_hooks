@@ -46,7 +46,8 @@ const AddMovie = ({addMovie}) => {
               Close
             </Button>
             <Button variant="primary" onClick={
-              ()=>{addMovie(inputs);handleClose();
+              ()=>{addMovie(inputs);
+                handleClose();
                 setInputs({
                   name:"",
                   image:"",

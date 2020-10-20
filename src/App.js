@@ -31,13 +31,13 @@ function App () {
   ];
   const [movies,setMovies]=useState(moviesList) ;
   const addMovie=(newMovie)=>{
-    setMovies([...moviesList,newMovie])
+    setMovies([...movies,newMovie])
   }
   const [search,setSearch]=useState("");
   const [rating,setRating]=useState(1);
   const searchFunc=(value)=>{
     setSearch(value);
-    setMovies(movies);
+    //setMovies(movies);
 
   }
   const ratingFunc=(rate)=>{
